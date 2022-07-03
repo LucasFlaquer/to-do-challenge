@@ -1,0 +1,41 @@
+.newTask {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -1.8rem;
+  gap: 0.5rem;
+
+
+  input {
+    flex: 1;
+    padding: 1rem;
+    background-color: var(--gray-500);
+    color: var(--gray-100);
+    border: 0;
+    border-radius: 8px;
+
+    &:focus {
+      outline: transparent;
+      box-shadow: 0 0 0 2px var(--purple-500);
+    }
+  }
+
+  button[type=submit] {
+    border-radius: 8px;
+    background-color: var(--blue-500);
+    border: 0;
+    padding: 1rem;
+    color: var(--gray-100);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    svg {
+      margin-left: 0.5rem;
+    }
+
+    &:hover {
+      background-color: var(--blue-300);
+    }
+  }
+}
