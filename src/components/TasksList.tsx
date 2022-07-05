@@ -25,6 +25,13 @@ export function TasksList() {
         </p>
         <p>Crie tarefas e organize seus itens a fazer</p>
       </div>
+      <ul>
+        <li>
+          <input type="checkbox" name="" id="" />
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, ullam?</p>
+          <span>icon trash</span>
+        </li>
+      </ul>
     </>
   )
 }
