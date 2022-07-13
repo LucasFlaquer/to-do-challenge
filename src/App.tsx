@@ -23,7 +23,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="container">
-        <NewTask />
+        <NewTask onCreateTask={onCreateTask} />
         <TasksList
           tasks={tasks}
           onToggleTask={onToggleTask}
