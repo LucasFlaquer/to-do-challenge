@@ -1,20 +1,14 @@
 import { EmptyTasks } from './EmptyTasks';
 import styles from './TasksList.module.scss'
-import { TaskItem } from './TaskItem';
+import { Task, TaskItem } from './TaskItem';
 
-const tasks = [
-  {
-    id: 1,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    finished: false
-  },
-  {
-    id: 2,
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-    finished: false
-  },
-]
-export function TasksList() {
+interface Props {
+  tasks: Task[];
+  onToggleTask: (id: number) => void;
+  onTaskDelete: (id: number) => void;
+}
+
+export function TasksList({ tasks, onToggleTask, onTaskDelete }: Props) {
   const finishedTasks = tasks.filter(task => task.finished)
   return (
     <>

@@ -16,24 +16,24 @@
 
     svg {
       color: var(--blue-300);
+      transition: color .3s ease;
+    }
+  }
+
+  &:hover {
+    svg {
+      color: var(--blue-500);
     }
 
-    &:hover {
-      svg {
-        color: var(--blue-500);
-      }
+  }
 
-    }
-
-    &Checked {
+  &Checked {
 
 
 
-      svg {
+    svg {
+      color: var(--purple-500);
 
-        color: var(--purple-500);
-
-      }
     }
   }
 

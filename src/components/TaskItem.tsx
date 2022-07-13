@@ -1,6 +1,6 @@
 import { CheckCircle, Circle, Trash } from "phosphor-react";
 import styles from './TaskItem.module.scss';
-interface Task {
+export interface Task {
   id: number;
   description: string;
   finished: boolean;
