@@ -1,0 +1,40 @@
+.task {
+  display: flex;
+  padding: 1rem;
+  background-color: var(--gray-500);
+  color: var(--gray-100);
+  align-items: center;
+
+  &Btn {
+    background: transparent;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+
+    svg {
+      color: var(--blue-300);
+    }
+
+    &:hover {
+      svg {
+        color: var(--blue-500);
+      }
+
+    }
+
+    &Checked {
+
+
+
+      svg {
+
+        color: var(--purple-500);
+
+      }
+    }
+  }
+
+  p {
+    flex: 1;
+  }
+}

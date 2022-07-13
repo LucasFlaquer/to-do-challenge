@@ -1,11 +1,13 @@
-import Clipboard from '../assets/Clipboard.svg'
+import { EmptyTasks } from './EmptyTasks';
 import styles from './TasksList.module.scss'
-interface Task {
-  id: number;
-  description: string;
-  finished: boolean;
-}
+import { TaskItem } from './TaskItem';
+
 export function TasksList() {
+  const task = {
+    id: 1,
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    finished: false
+  }
   return (
     <>
       <header className={styles.tasksHeader}>
@@ -18,19 +20,9 @@ export function TasksList() {
           <span>0</span>
         </p>
       </header>
-      <div className={styles.emptyTasks}>
-        <img src={Clipboard} alt="" />
-        <p>
-          <strong>Você ainda não tem tarefas cadastradas</strong>
-        </p>
-        <p>Crie tarefas e organize seus itens a fazer</p>
-      </div>
-      <ul>
-        <li>
-          <input type="checkbox" name="" id="" />
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis, ullam?</p>
-          <span>icon trash</span>
-        </li>
+      <EmptyTasks />
+      <ul className={styles.tasks}>
+        <TaskItem task={task} />
       </ul>
     </>
   )
