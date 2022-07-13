@@ -22,7 +22,7 @@ export function TaskItem({ task }: Props) {
         }
       </button>
       <p>{task.description}</p>
-      <Trash />
+      <Trash size={20} color='#808080' />
     </li>
   )
 }

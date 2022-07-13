@@ -3,7 +3,10 @@
   padding: 1rem;
   background-color: var(--gray-500);
   color: var(--gray-100);
-  align-items: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+  border-radius: 8px;
+
 
   &Btn {
     background: transparent;
@@ -36,5 +39,9 @@
 
   p {
     flex: 1;
+  }
+
+  &+.task {
+    margin-top: 0.75rem;
   }
 }
