@@ -19,7 +19,14 @@ export function TasksList({ tasks, onToggleTask, onTaskDelete }: Props) {
         </p>
         <p className={styles.finishedTasks}>
           <strong>Concluídas</strong>
-          <span>{finishedTasks.length}</span>
+          <span>
+            {
+              finishedTasks.length > 0 ?
+                `${finishedTasks.length} de ${tasks.length}` :
+                finishedTasks.length
+            }
+
+          </span>
         </p>
       </header>
       {tasks.length === 0 ? <EmptyTasks /> : (
