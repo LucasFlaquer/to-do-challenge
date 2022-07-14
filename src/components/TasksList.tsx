@@ -24,7 +24,15 @@ export function TasksList({ tasks, onToggleTask, onTaskDelete }: Props) {
       </header>
       {tasks.length === 0 ? <EmptyTasks /> : (
         <ul className={styles.tasks}>
-          {tasks.map(task => (<TaskItem key={task.id} task={task} />))}
+          {
+            tasks.map(task => (
+              <TaskItem
+                key={task.id}
+                task={task}
+                onToggleTask={onToggleTask}
+              />
+            ))
+          }
         </ul>
       )}
     </>

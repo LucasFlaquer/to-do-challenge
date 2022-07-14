@@ -8,20 +8,27 @@ export interface Task {
 
 interface Props {
   task: Task;
+  onToggleTask: (id: number) => void;
 }
 
-export function TaskItem({ task }: Props) {
+export function TaskItem({ task, onToggleTask }: Props) {
+  const { id, finished, description } = task;
+
+  function handleToggleTask() {
+    onToggleTask(id);
+  }
+
   return (
-    <li className={styles.task}>
-      <button className={`${styles.taskBtn} ${styles.taskBtnChecked}`}>
+    <li className={`${styles.task} ${finished ? styles.taskFinished : ''}`}>
+      <button className={styles.taskBtn} onClick={handleToggleTask}>
         {
-          task.finished ?
+          finished ?
             <CheckCircle size={25} weight="fill" />
             :
             <Circle size={25} />
         }
       </button>
-      <p>{task.description}</p>
+      <p>{description}</p>
       <Trash size={20} color='#808080' />
     </li>
   )

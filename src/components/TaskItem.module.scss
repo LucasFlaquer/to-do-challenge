@@ -7,7 +7,6 @@
   gap: 0.75rem;
   border-radius: 8px;
 
-
   &Btn {
     background: transparent;
     outline: none;
@@ -27,21 +26,27 @@
 
   }
 
-  &Checked {
-
-
-
-    svg {
-      color: var(--purple-500);
-
-    }
-  }
-
   p {
     flex: 1;
   }
 
+  &Finished {
+    p {
+      color: var(--gray-300);
+      text-decoration: line-through;
+    }
+  }
+
+
+
   &+.task {
     margin-top: 0.75rem;
+  }
+}
+
+.Checked {
+  svg {
+    color: var(--purple-500);
+
   }
 }

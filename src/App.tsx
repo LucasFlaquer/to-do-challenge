@@ -8,12 +8,19 @@ import './global.scss'
 
 function App() {
   const [tasks, setTasks] = useState<Task[]>([])
+
   function onCreateTask(description: string) {
     const newTask = { id: tasks.length, description, finished: false }
     setTasks([...tasks, newTask])
   }
   function onToggleTask(id: number) {
-    console.log('toggle task')
+    const tasksUpdated = tasks.map(task => {
+      if (task.id === id) {
+        return { ...task, finished: !task.finished }
+      }
+      return task
+    })
+    setTasks(tasksUpdated)
   }
   function onTaskDelete(id: number) {
     console.log('delete task')
