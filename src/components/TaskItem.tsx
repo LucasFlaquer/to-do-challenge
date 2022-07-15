@@ -9,13 +9,18 @@ export interface Task {
 interface Props {
   task: Task;
   onToggleTask: (id: number) => void;
+  onDeleteTask: (id: number) => void;
 }
 
-export function TaskItem({ task, onToggleTask }: Props) {
+export function TaskItem({ task, onToggleTask, onDeleteTask }: Props) {
   const { id, finished, description } = task;
 
   function handleToggleTask() {
     onToggleTask(id);
+  }
+
+  function handleDeleteTask() {
+    onDeleteTask(id);
   }
 
   return (
@@ -29,7 +34,9 @@ export function TaskItem({ task, onToggleTask }: Props) {
         }
       </button>
       <p>{description}</p>
-      <Trash size={20} color='#808080' />
+      <button className={styles.taskDelete} onClick={handleDeleteTask}>
+        <Trash size={20} />
+      </button>
     </li>
   )
 }

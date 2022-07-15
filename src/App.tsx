@@ -23,7 +23,8 @@ function App() {
     setTasks(tasksUpdated)
   }
   function onTaskDelete(id: number) {
-    console.log('delete task')
+    const tasksUpdated = tasks.filter(task => task.id !== id)
+    setTasks(tasksUpdated)
   }
 
   return (

@@ -37,6 +37,7 @@ export function TasksList({ tasks, onToggleTask, onTaskDelete }: Props) {
                 key={task.id}
                 task={task}
                 onToggleTask={onToggleTask}
+                onDeleteTask={onTaskDelete}
               />
             ))
           }
