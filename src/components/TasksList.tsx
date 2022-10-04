@@ -21,7 +21,7 @@ export function TasksList({ tasks, onToggleTask, onTaskDelete }: Props) {
           <strong>Concluídas</strong>
           <span>
             {
-              finishedTasks.length > 0 ?
+              tasks.length > 0 ?
                 `${finishedTasks.length} de ${tasks.length}` :
                 finishedTasks.length
             }
