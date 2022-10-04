@@ -8,6 +8,8 @@
   border-radius: 8px;
 
   &Btn {
+    height: 25px;
+    width: 25px;
     background: transparent;
     outline: none;
     border: 0;
@@ -36,6 +38,30 @@
       color: var(--gray-300);
       text-decoration: line-through;
     }
+    .taskBtn {
+      position: relative;
+      &::before {
+        content:'';
+        height: 18px;
+        width: 18px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        z-index: 0;
+        border-radius: 50%;
+      }
+      svg {
+        position: relative;
+        color: var(--purple-500);
+      }
+      &:hover {
+        svg {
+          color: var(--purple-700);
+        }
+      }
+    }
   }
 
   &+.task {
@@ -48,16 +74,10 @@
     border: 0;
     cursor: pointer;
     color: var(--gray-300);
-
+    transition: color .3s ease;
+    
     &:hover {
       color: var(--red-400);
     }
-  }
-}
-
-.Checked {
-  svg {
-    color: var(--purple-500);
-
   }
 }
